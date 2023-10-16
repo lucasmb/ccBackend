@@ -1,0 +1,20 @@
+
+### Miscellaneous
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+.env
+
+### nginx-proxy
+pb_data/*
+!pb_data/.gitkeep
+
+pb_migrations/*
+!pb_migrations/.gitkeep
+
+# pb_hooks/*
+# !pb_hooks/.gitkeep

@@ -1,0 +1,19 @@
+services:
+  pocketbase:
+    build: .
+    restart: unless-stopped
+    container_name: pocketbase
+    ports:
+      # REST API: http://127.0.0.1:8090/api/
+      # Admin UI: http://127.0.0.1:8090/_/
+      - 8090:8090                      
+    networks:
+      - serverproxy_proxy-tier
+    volumes:
+      - ./pb_data:/pb/pb_data
+      - ./pb_migrations:/pb/pb_migrations
+      - ./pb_hooks:/pb/pb_hooks
+
+networks:
+  serverproxy_proxy-tier:
+    external: true
